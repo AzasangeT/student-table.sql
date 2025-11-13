@@ -1,0 +1,54 @@
+STEP 1 
+CREATE TABLE students(
+student_id INT PRIMARY KEY,
+name VARCHAR(50),
+surname VARCHAR(50),
+programme VARCHAR(50),
+average DECIMAL ,
+enrollment_date DATE);
+
+STEP 2
+INSERT INTO students ("student_id","name","surname","programme","average","enrollment_date")
+VALUES 
+('1','Emma','Watson','Data Science','91.2','2023-09-12'),
+('2','James','Rodriguez','Biotechnology','78.5','2022-08-25'),
+('3','Priya','Patel','Robotics','98.0','2023-09-20'),
+('4','Alex','Turner','Data Science','84.3','2021-09-05');
+
+Question 1 
+SELECT name ||'  '|| surname As Full_name , programme
+FROM students 
+
+Question 2 
+SELECT name ||' '|| surname As Full_name , average
+FROM students 
+WHERE average > 90
+ORDER BY average DESC;
+
+Question 3 
+UPDATE students
+SET average = 85.5
+WHERE name = 'James Rodriguez'
+
+Question 4 
+UPDATE students
+SET programme = 'Data Science'
+WHERE name = 'Priya Patel';
+
+Question 5
+DELETE FROM students
+WHERE name = 'Alex' and surname = 'Turner';
+
+Question 6
+INSERT INTO students (student_id,name,surname,programme,average,enrollment_date)
+values ('5','Lucas','Kim','Cybersecurity','81.5','2025-11-13');
+
+Question 7
+SELECT programme, COUNT(*) AS student_count
+FROM students
+GROUP BY programme
+ORDER BY student_count DESC;
+
+
+
+ 
